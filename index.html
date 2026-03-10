@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع إنجيل مرقس - فادي مرزق</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* الهيدر المطلوب بالخط الكبير */
+        .main-header {
+            background-color: #1a2a6c;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .main-header h1 {
+            margin: 0;
+            font-size: 3rem; /* خط كبير جداً */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        h2 { color: #b21f1f; border-bottom: 3px solid #fdbb2d; padding-bottom: 10px; margin-top: 0; }
+        h3 { color: #1a2a6c; background: #eef2f3; padding: 10px; border-radius: 8px; }
+
+        .text-content {
+            white-space: pre-line; /* للحفاظ على تنسيق الأسطر كما أرسلتها */
+            font-size: 1.2rem;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .quiz-section {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 15px;
+            border-right: 6px solid #1a2a6c;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .next-btn {
+            background: linear-gradient(to left, #1a2a6c, #b21f1f);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            border-radius: 30px;
+            cursor: pointer;
+            display: block;
+            margin: 40px auto 0;
+            transition: 0.3s transform;
+        }
+
+        .next-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .final-msg {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #1a2a6c;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-header">
+        <h1>تمت برمجة هذا الموقع عن طريق المبرمج فادي مرزق</h1>
+    </div>
+
+    <div class="container">
+        
+        <div id="step4" class="step active">
+            <h2>الأصحاح الرابع: ملكوت الله والأمثال</h2>
+            <h3>الشرح:</h3>
+            <div class="text-content">
+يركز هذا الأصحاح على "التعليم"، حيث استخدم السيد المسيح الأمثال ليشرح طبيعة ملكوت الله.
+​مثل الزارع: يوضح أن كلمة الله ثابتة، لكن الاستجابة تختلف باختلاف "قلب الإنسان" (التربة).
+​أمثال النمو: مثل (السراج) الذي لا يُخفى، ومثل (البذرة التي تنمو سراً) لتوضيح أن عمل الله ينمو بقوته الخاصة، ومثل (حبة الخردل) للإشارة إلى أن الملكوت يبدأ صغيراً جداً ثم يشمل المسكونة.
+​إسكات العاصفة: تظهر في النهاية قوة المسيح وسلطانه على الطبيعة، ليعلم التلاميذ أن وجوده معهم في "السفينة" (الكنيسة) يمنحهم الأمان رغم الأمواج.
+            </div>
+
+            <div class="quiz-section">
+                <h3>اختبار الأصحاح الرابع:</h3>
+                <div class="question">1. ما هي العناصر الأربعة التي سقطت عليها البذور في مثل الزارع؟ <input type="text"></div>
+                <div class="question">2. من هم الذين يمثلون الأرض المحجرة بحسب تفسير المسيح؟ <input type="text"></div>
+                <div class="question">3. ما الذي يخنقه "الشوك" في حياة الإنسان؟ <input type="text"></div>
+                <div class="question">4. "من له أذنان للسمع فليسمع"؛ لماذا كرر المسيح هذه العبارة؟ <input type="text"></div>
+                <div class="question">5. أين يوضع السراج (المصباح) لكي يضيء للجميع؟ <input type="text"></div>
+                <div class="question">6. ما هي الميزة الفريدة لمثل "نمو البذرة سراً" (مرقس 4: 26-29)؟ <input type="text"></div>
+                <div class="question">7. إلى ماذا ترمز "حبة الخردل" في تعليم المسيح؟ <input type="text"></div>
+                <div class="question">8. لماذا كان المسيح يكلم الجموع بأمثال فقط، ويفسرها لتلاميذه على انفراد؟ <input type="text"></div>
+                <div class="question">9. أين كان المسيح نائماً عندما بدأت العاصفة في البحر؟ <input type="text"></div>
+                <div class="question">10. ما هو السؤال الذي طرحه التلاميذ على بعضهم بعد هدوء العاصفة؟ <input type="text"></div>
+            </div>
+            <button class="next-btn" onclick="showStep('step5')">التالي (الأصحاح الخامس)</button>
+        </div>
+
+        <div id="step5" class="step">
+            <h2>الأصحاح الخامس: سلطان المسيح المطلق</h2>
+            <h3>الشرح:</h3>
+            <div class="text-content">
+ينتقل الأصحاح من "التعليم" إلى "العمل والقوة"، ويستعرض ثلاث معجزات كبرى تظهر سلطان المسيح على كل شيء:
+​سلطان على الأرواح (مجنون كورة الجدريين): شفاء الرجل الذي كان يسكن القبور، وتحريره من جوقة شياطين (لجيون)، مما يثبت أن المسيح هو محرر النفس البشرية.
+​سلطان على المرض (نازفة الدم): شفاء امرأة عانت 12 سنة بلمسة إيمان لثوبه، ليعلمنا أن الإيمان البسيط يقتنص القوة الإلهية.
+​سلطان على الموت (ابنة يايرس): إقامة ابنة رئيس المجمع من الموت بكلمة واحدة، ليؤكد أنه هو "القيامة والحياة".
+            </div>
+
+            <div class="quiz-section">
+                <h3>اختبار الأصحاح الخامس:</h3>
+                <div class="question">1. في أي مقاطعة حدثت معجزة شفاء الرجل الذي به روح نجس؟ <input type="text"></div>
+                <div class="question">2. ماذا كان يفعل المجنون بنفسه وسط القبور قبل لقاء المسيح؟ <input type="text"></div>
+                <div class="question">3. كم كان عدد الخنازير تقريباً التي اندفعت إلى البحر وغرقت؟ <input type="text"></div>
+                <div class="question">4. لماذا طلب أهل الكورة من المسيح أن يغادر تخومهم؟ <input type="text"></div>
+                <div class="question">5. ما هو منصب "يايرس" الذي جاء يسجد للمسيح؟ <input type="text"></div>
+                <div class="question">6. ماذا فعلت المرأة نازفة الدم لتنال الشفاء فوراً؟ <input type="text"></div>
+                <div class="question">7. كيف عرف المسيح أن قوة قد خرجت منه وسط الزحام؟ <input type="text"></div>
+                <div class="question">8. مَن مِن التلاميذ سمح لهم المسيح بمرافقتة إلى بيت يايرس؟ <input type="text"></div>
+                <div class="question">9. ماذا كان رد فعل الناس في بيت يايرس عندما قال المسيح إن الصبية نائمة؟ <input type="text"></div>
+                <div class="question">10. ما هي الكلمة (بالأرامية) التي قالها المسيح للصبية لتقوم؟ <input type="text"></div>
+            </div>
+            <button class="next-btn" onclick="showStep('step6')">التالي (الأصحاح السادس)</button>
+        </div>
+
+        <div id="step6" class="step">
+            <h2>الأصحاح السادس: الخدمة، الرفض، والمعجزات</h2>
+            <h3>الشرح:</h3>
+            <div class="text-content">
+يستعرض هذا الأصحاح اتساع خدمة المسيح وتنوع أحداثها:
+​الرفض في الناصرة: يظهر كيف يمنع "عدم الإيمان" الإنسان من التمتع بعمل الله.
+​إرسالية التلاميذ: أرسل المسيح التلاميذ ليتدربوا على الخدمة معتمدين على "القوة" التي أعطاها لهم لا على الإمكانيات المادية.
+​استشهاد يوحنا المعمدان: قصة استشهاد يوحنا لبيان ضريبة التمسك بالحق.
+​إشباع الجموع والمشي على الماء: معجزتان في البر والبحر تؤكدان رعاية المسيح لاحتياجات الإنسان الجسدية (الجوع) والنفسية (الخوف).
+            </div>
+
+            <div class="quiz-section">
+                <h3>اختبار الأصحاح السادس:</h3>
+                <div class="question">1. ما هي المهن التي نُسبت للمسيح من قِبل أهل وطنه؟ <input type="text"></div>
+                <div class="question">2. لماذا تعجب المسيح من أهل الناصرة؟ <input type="text"></div>
+                <div class="question">3. ما الذي سمح المسيح للتلاميذ بحمله فقط عند خروجهم للإرسالية؟ <input type="text"></div>
+                <div class="question">4. ماذا طلب المسيح من التلاميذ أن يفعلوا إذا لم يقبلهم بيت أو مدينة؟ <input type="text"></div>
+                <div class="question">5. ما هو السبب الحقيقي الذي جعل هيرودس يقطع رأس يوحنا المعمدان؟ <input type="text"></div>
+                <div class="question">6. كم رغيفاً وسمكة كانت مع التلاميذ لإطعام الخمسة آلاف؟ <input type="text"></div>
+                <div class="question">7. كيف نظم المسيح الجموع للجلوس قبل توزيع الطعام؟ <input type="text"></div>
+                <div class="question">8. بعد المعجزة، أين ذهب المسيح ليصلي منفرداً؟ <input type="text"></div>
+                <div class="question">9. في أي "هزيع" من الليل جاء المسيح للتلاميذ ماشياً على الماء؟ <input type="text"></div>
+                <div class="question">10. ماذا حدث للمرضى الذين لمسوا فقط "هدب ثوب" المسيح في أرض جنيسارت؟ <input type="text"></div>
+            </div>
+            <button class="next-btn" onclick="finish()">إنهاء الاختبار</button>
+        </div>
+
+        <div id="thanks" class="final-msg">
+            <h2>تم الانتهاء بنجاح!</h2>
+            <p>شكراً لك على استخدام الموقع التعليمي للمبرمج فادي مرزق.</p>
+        </div>
+
+    </div>
+
+    <script>
+        function showStep(stepId) {
+            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+            document.getElementById(stepId).classList.add('active');
+            window.scrollTo(0,0);
+        }
+
+        function finish() {
+            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+            document.getElementById('thanks').style.display = 'block';
+            window.scrollTo(0,0);
+        }
+    </script>
+</body>
+</html>

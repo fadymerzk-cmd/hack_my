@@ -7,213 +7,260 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
+            background-color: #f4f7f6;
             margin: 0;
             padding: 0;
         }
 
-        /* الهيدر المطلوب بالخط الكبير */
-        .main-header {
-            background-color: #1a2a6c;
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: white;
             text-align: center;
-            padding: 40px 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        .main-header h1 {
+        header h1 {
             margin: 0;
-            font-size: 3rem; /* خط كبير جداً */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 2.8rem;
         }
 
         .container {
-            max-width: 900px;
-            margin: 40px auto;
+            max-width: 850px;
+            margin: 30px auto;
             background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
-        .step {
-            display: none;
-        }
+        .step { display: none; }
+        .step.active { display: block; animation: fadeIn 0.5s ease; }
 
-        .step.active {
-            display: block;
-            animation: slideIn 0.5s ease;
-        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        h2 { color: #b21f1f; border-bottom: 3px solid #fdbb2d; padding-bottom: 10px; margin-top: 0; }
-        h3 { color: #1a2a6c; background: #eef2f3; padding: 10px; border-radius: 8px; }
+        h2 { color: #d35400; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h3 { color: #2c3e50; margin-top: 25px; }
 
         .text-content {
-            white-space: pre-line; /* للحفاظ على تنسيق الأسطر كما أرسلتها */
-            font-size: 1.2rem;
-            color: #333;
+            background: #fffdf9;
+            padding: 20px;
+            border-right: 5px solid #d35400;
+            white-space: pre-line;
             line-height: 1.8;
+            font-size: 1.1rem;
             margin-bottom: 30px;
-            text-align: justify;
         }
 
-        .quiz-section {
-            background-color: #f9f9f9;
-            padding: 25px;
-            border-radius: 15px;
-            border-right: 6px solid #1a2a6c;
-        }
-
-        .question {
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        input[type="text"] {
-            width: 100%;
+        .quiz-option {
+            display: block;
+            background: #f8f9fa;
             padding: 12px;
-            margin-top: 8px;
-            border: 2px solid #ddd;
+            margin: 8px 0;
+            border: 1px solid #ddd;
             border-radius: 8px;
-            box-sizing: border-box;
+            cursor: pointer;
+            transition: 0.2s;
         }
 
-        .next-btn {
-            background: linear-gradient(to left, #1a2a6c, #b21f1f);
+        .quiz-option:hover { background: #e9ecef; border-color: #1e3c72; }
+        input[type="radio"] { margin-left: 10px; }
+
+        .btn {
+            background-color: #1e3c72;
             color: white;
             border: none;
             padding: 15px 40px;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             border-radius: 30px;
             cursor: pointer;
             display: block;
-            margin: 40px auto 0;
-            transition: 0.3s transform;
+            margin: 30px auto;
         }
 
-        .next-btn:hover {
-            transform: scale(1.05);
-        }
-
-        .final-msg {
-            text-align: center;
-            font-size: 1.5rem;
-            color: #1a2a6c;
-            display: none;
-        }
+        .btn:hover { background-color: #2a5298; }
     </style>
 </head>
 <body>
 
-    <div class="main-header">
-        <h1>تمت برمجة هذا الموقع عن طريق المبرمج فادي مرزق</h1>
-    </div>
+<header>
+    <h1>تمت برمجة هذا الموقع عن طريق المبرمج فادي مرزق</h1>
+</header>
 
-    <div class="container">
-        
-        <div id="step4" class="step active">
-            <h2>الأصحاح الرابع: ملكوت الله والأمثال</h2>
-            <h3>الشرح:</h3>
-            <div class="text-content">
+<div class="container">
+    
+    <div id="step4" class="step active">
+        <h2>الأصحاح الرابع: ملكوت الله والأمثال</h2>
+        <div class="text-content">
 يركز هذا الأصحاح على "التعليم"، حيث استخدم السيد المسيح الأمثال ليشرح طبيعة ملكوت الله.
 ​مثل الزارع: يوضح أن كلمة الله ثابتة، لكن الاستجابة تختلف باختلاف "قلب الإنسان" (التربة).
 ​أمثال النمو: مثل (السراج) الذي لا يُخفى، ومثل (البذرة التي تنمو سراً) لتوضيح أن عمل الله ينمو بقوته الخاصة، ومثل (حبة الخردل) للإشارة إلى أن الملكوت يبدأ صغيراً جداً ثم يشمل المسكونة.
 ​إسكات العاصفة: تظهر في النهاية قوة المسيح وسلطانه على الطبيعة، ليعلم التلاميذ أن وجوده معهم في "السفينة" (الكنيسة) يمنحهم الأمان رغم الأمواج.
-            </div>
-
-            <div class="quiz-section">
-                <h3>اختبار الأصحاح الرابع:</h3>
-                <div class="question">1. ما هي العناصر الأربعة التي سقطت عليها البذور في مثل الزارع؟ <input type="text"></div>
-                <div class="question">2. من هم الذين يمثلون الأرض المحجرة بحسب تفسير المسيح؟ <input type="text"></div>
-                <div class="question">3. ما الذي يخنقه "الشوك" في حياة الإنسان؟ <input type="text"></div>
-                <div class="question">4. "من له أذنان للسمع فليسمع"؛ لماذا كرر المسيح هذه العبارة؟ <input type="text"></div>
-                <div class="question">5. أين يوضع السراج (المصباح) لكي يضيء للجميع؟ <input type="text"></div>
-                <div class="question">6. ما هي الميزة الفريدة لمثل "نمو البذرة سراً" (مرقس 4: 26-29)؟ <input type="text"></div>
-                <div class="question">7. إلى ماذا ترمز "حبة الخردل" في تعليم المسيح؟ <input type="text"></div>
-                <div class="question">8. لماذا كان المسيح يكلم الجموع بأمثال فقط، ويفسرها لتلاميذه على انفراد؟ <input type="text"></div>
-                <div class="question">9. أين كان المسيح نائماً عندما بدأت العاصفة في البحر؟ <input type="text"></div>
-                <div class="question">10. ما هو السؤال الذي طرحه التلاميذ على بعضهم بعد هدوء العاصفة؟ <input type="text"></div>
-            </div>
-            <button class="next-btn" onclick="showStep('step5')">التالي (الأصحاح الخامس)</button>
         </div>
+        
+        <div class="quiz">
+            <h3>اختبار الأصحاح الرابع:</h3>
+            <p>1. ما هي العناصر الأربعة التي سقطت عليها البذور في مثل الزارع؟</p>
+            <label class="quiz-option"><input type="radio" name="q4_1"> الطريق، الأرض المحجرة، الشوك، الأرض الجيدة</label>
+            <label class="quiz-option"><input type="radio" name="q4_1"> البحر، الجبل، البيت، الحقل</label>
 
-        <div id="step5" class="step">
-            <h2>الأصحاح الخامس: سلطان المسيح المطلق</h2>
-            <h3>الشرح:</h3>
-            <div class="text-content">
-ينتقل الأصحاح من "التعليم" إلى "العمل والقوة"، ويستعرض ثلاث معجزات كبرى تظهر سلطان المسيح على كل شيء:
+            <p>2. من هم الذين يمثلون الأرض المحجرة بحسب تفسير المسيح؟</p>
+            <label class="quiz-option"><input type="radio" name="q4_2"> الذين يسمعون الكلمة ويقبلونها بفرح وقتي ثم يعثرون</label>
+            <label class="quiz-option"><input type="radio" name="q4_2"> الذين لا يسمعون الكلمة نهائياً</label>
+
+            <p>3. ما الذي يخنقه "الشوك" في حياة الإنسان؟</p>
+            <label class="quiz-option"><input type="radio" name="q4_3"> هموم الدنيا وغرور الغنى</label>
+            <label class="quiz-option"><input type="radio" name="q4_3"> الطيور التي تأكل البذور</label>
+
+            <p>4. "من له أذنان للسمع فليسمع"؛ لماذا كرر المسيح هذه العبارة؟</p>
+            <label class="quiz-option"><input type="radio" name="q4_4"> للتأكيد على أهمية الانتباه والفهم الروحي</label>
+            <label class="quiz-option"><input type="radio" name="q4_4"> لأن المكان كان صاخباً جداً</label>
+
+            <p>5. أين يوضع السراج (المصباح) لكي يضيء للجميع؟</p>
+            <label class="quiz-option"><input type="radio" name="q4_5"> على المنارة</label>
+            <label class="quiz-option"><input type="radio" name="q4_5"> تحت المكيال أو السرير</label>
+
+            <p>6. ما هي الميزة الفريدة لمثل "نمو البذرة سراً"؟</p>
+            <label class="quiz-option"><input type="radio" name="q4_6"> أن الأرض تخرج الثمر من تلقاء ذاتها بقوة الله</label>
+            <label class="quiz-option"><input type="radio" name="q4_6"> أن الزارع يجب أن يسهر بجانبها دائماً</label>
+
+            <p>7. إلى ماذا ترمز "حبة الخردل" في تعليم المسيح؟</p>
+            <label class="quiz-option"><input type="radio" name="q4_7"> بداية الملكوت الصغيرة التي تصبح عظيمة</label>
+            <label class="quiz-option"><input type="radio" name="q4_7"> مرارة التجارب التي يمر بها المؤمن</label>
+
+            <p>8. لماذا كان المسيح يكلم الجموع بأمثال فقط، ويفسرها لتلاميذه على انفراد؟</p>
+            <label class="quiz-option"><input type="radio" name="q4_8"> ليعطيهم أسرار الملكوت لأنهم مستعدون للإيمان</label>
+            <label class="quiz-option"><input type="radio" name="q4_8"> لأنه لم يكن لديه وقت للشرح للجميع</label>
+
+            <p>9. أين كان المسيح نائماً عندما بدأت العاصفة في البحر؟</p>
+            <label class="quiz-option"><input type="radio" name="q4_9"> في مؤخر السفينة على وسادة</label>
+            <label class="quiz-option"><input type="radio" name="q4_9"> في وسط السفينة واقفاً</label>
+
+            <p>10. ما هو السؤال الذي طرحه التلاميذ على بعضهم بعد هدوء العاصفة؟</p>
+            <label class="quiz-option"><input type="radio" name="q4_10"> من هو هذا؟ فإن الريح والبحر أيضاً يطيعانه!</label>
+            <label class="quiz-option"><input type="radio" name="q4_10"> متى سنصل إلى البر الآخر؟</label>
+        </div>
+        <button class="btn" onclick="nextStep('step5')">التالي (الأصحاح الخامس)</button>
+    </div>
+
+    <div id="step5" class="step">
+        <h2>الأصحاح الخامس: سلطان المسيح المطلق</h2>
+        <div class="text-content">
+ينتقل الأصحاح من "التعليم" إلى "العمل والقوة" ويستعرض ثلاث معجزات كبرى تظهر سلطان المسيح على كل شيء:
 ​سلطان على الأرواح (مجنون كورة الجدريين): شفاء الرجل الذي كان يسكن القبور، وتحريره من جوقة شياطين (لجيون)، مما يثبت أن المسيح هو محرر النفس البشرية.
 ​سلطان على المرض (نازفة الدم): شفاء امرأة عانت 12 سنة بلمسة إيمان لثوبه، ليعلمنا أن الإيمان البسيط يقتنص القوة الإلهية.
 ​سلطان على الموت (ابنة يايرس): إقامة ابنة رئيس المجمع من الموت بكلمة واحدة، ليؤكد أنه هو "القيامة والحياة".
-            </div>
-
-            <div class="quiz-section">
-                <h3>اختبار الأصحاح الخامس:</h3>
-                <div class="question">1. في أي مقاطعة حدثت معجزة شفاء الرجل الذي به روح نجس؟ <input type="text"></div>
-                <div class="question">2. ماذا كان يفعل المجنون بنفسه وسط القبور قبل لقاء المسيح؟ <input type="text"></div>
-                <div class="question">3. كم كان عدد الخنازير تقريباً التي اندفعت إلى البحر وغرقت؟ <input type="text"></div>
-                <div class="question">4. لماذا طلب أهل الكورة من المسيح أن يغادر تخومهم؟ <input type="text"></div>
-                <div class="question">5. ما هو منصب "يايرس" الذي جاء يسجد للمسيح؟ <input type="text"></div>
-                <div class="question">6. ماذا فعلت المرأة نازفة الدم لتنال الشفاء فوراً؟ <input type="text"></div>
-                <div class="question">7. كيف عرف المسيح أن قوة قد خرجت منه وسط الزحام؟ <input type="text"></div>
-                <div class="question">8. مَن مِن التلاميذ سمح لهم المسيح بمرافقتة إلى بيت يايرس؟ <input type="text"></div>
-                <div class="question">9. ماذا كان رد فعل الناس في بيت يايرس عندما قال المسيح إن الصبية نائمة؟ <input type="text"></div>
-                <div class="question">10. ما هي الكلمة (بالأرامية) التي قالها المسيح للصبية لتقوم؟ <input type="text"></div>
-            </div>
-            <button class="next-btn" onclick="showStep('step6')">التالي (الأصحاح السادس)</button>
         </div>
+        
+        <div class="quiz">
+            <h3>اختبار الأصحاح الخامس:</h3>
+            <p>1. في أي مقاطعة حدثت معجزة شفاء الرجل الذي به روح نجس؟</p>
+            <label class="quiz-option"><input type="radio" name="q5_1"> كورة الجدريين</label>
+            <label class="quiz-option"><input type="radio" name="q5_1"> كفرناحوم</label>
 
-        <div id="step6" class="step">
-            <h2>الأصحاح السادس: الخدمة، الرفض، والمعجزات</h2>
-            <h3>الشرح:</h3>
-            <div class="text-content">
+            <p>2. ماذا كان يفعل المجنون بنفسه وسط القبور قبل لقاء المسيح؟</p>
+            <label class="quiz-option"><input type="radio" name="q5_2"> يصيح ويجرح نفسه بالحجارة</label>
+            <label class="quiz-option"><input type="radio" name="q5_2"> يزرع الأشجار ويصلي</label>
+
+            <p>3. كم كان عدد الخنازير تقريباً التي اندفعت إلى البحر وغرقت؟</p>
+            <label class="quiz-option"><input type="radio" name="q5_3"> نحو ألفين</label>
+            <label class="quiz-option"><input type="radio" name="q5_3"> نحو مئة</label>
+
+            <p>4. لماذا طلب أهل الكورة من المسيح أن يغادر تخومهم؟</p>
+            <label class="quiz-option"><input type="radio" name="q5_4"> بسبب الخوف مما حدث وبسبب خسارة الخنازير</label>
+            <label class="quiz-option"><input type="radio" name="q5_4"> لأنهم أرادوا الذهاب معه</label>
+
+            <p>5. ما هو منصب "يايرس" الذي جاء يسجد للمسيح؟</p>
+            <label class="quiz-option"><input type="radio" name="q5_5"> رئيس المجمع</label>
+            <label class="quiz-option"><input type="radio" name="q5_5"> قائد مئة</label>
+
+            <p>6. ماذا فعلت المرأة نازفة الدم لتنال الشفاء فوراً؟</p>
+            <label class="quiz-option"><input type="radio" name="q5_6"> لمست هدب ثوبه بإيمان</label>
+            <label class="quiz-option"><input type="radio" name="q5_6"> طلبت منه بصوت عالٍ أمام الجميع</label>
+
+            <p>7. كيف عرف المسيح أن قوة قد خرجت منه وسط الزحام؟</p>
+            <label class="quiz-option"><input type="radio" name="q5_7"> لأنه شاعر في نفسه بالقوة التي خرجت</label>
+            <label class="quiz-option"><input type="radio" name="q5_7"> لأن بطرس أخبره بذلك</label>
+
+            <p>8. مَن مِن التلاميذ سمح لهم المسيح بمرافقتة إلى بيت يايرس؟</p>
+            <label class="quiz-option"><input type="radio" name="q5_8"> بطرس ويعقوب ويوحنا</label>
+            <label class="quiz-option"><input type="radio" name="q5_8"> جميع التلاميذ الاثني عشر</label>
+
+            <p>9. ماذا كان رد فعل الناس في بيت يايرس عندما قال المسيح إن الصبية نائمة؟</p>
+            <label class="quiz-option"><input type="radio" name="q5_9"> ضحكوا عليه</label>
+            <label class="quiz-option"><input type="radio" name="q5_9"> سجدوا له</label>
+
+            <p>10. ما هي الكلمة (بالأرامية) التي قالها المسيح للصبية لتقوم؟</p>
+            <label class="quiz-option"><input type="radio" name="q5_10"> طليثا، قومي</label>
+            <label class="quiz-option"><input type="radio" name="q5_10"> إفثا</label>
+        </div>
+        <button class="btn" onclick="nextStep('step6')">التالي (الأصحاح السادس)</button>
+    </div>
+
+    <div id="step6" class="step">
+        <h2>الأصحاح السادس: الخدمة، الرفض، والمعجزات</h2>
+        <div class="text-content">
 يستعرض هذا الأصحاح اتساع خدمة المسيح وتنوع أحداثها:
 ​الرفض في الناصرة: يظهر كيف يمنع "عدم الإيمان" الإنسان من التمتع بعمل الله.
 ​إرسالية التلاميذ: أرسل المسيح التلاميذ ليتدربوا على الخدمة معتمدين على "القوة" التي أعطاها لهم لا على الإمكانيات المادية.
 ​استشهاد يوحنا المعمدان: قصة استشهاد يوحنا لبيان ضريبة التمسك بالحق.
 ​إشباع الجموع والمشي على الماء: معجزتان في البر والبحر تؤكدان رعاية المسيح لاحتياجات الإنسان الجسدية (الجوع) والنفسية (الخوف).
-            </div>
-
-            <div class="quiz-section">
-                <h3>اختبار الأصحاح السادس:</h3>
-                <div class="question">1. ما هي المهن التي نُسبت للمسيح من قِبل أهل وطنه؟ <input type="text"></div>
-                <div class="question">2. لماذا تعجب المسيح من أهل الناصرة؟ <input type="text"></div>
-                <div class="question">3. ما الذي سمح المسيح للتلاميذ بحمله فقط عند خروجهم للإرسالية؟ <input type="text"></div>
-                <div class="question">4. ماذا طلب المسيح من التلاميذ أن يفعلوا إذا لم يقبلهم بيت أو مدينة؟ <input type="text"></div>
-                <div class="question">5. ما هو السبب الحقيقي الذي جعل هيرودس يقطع رأس يوحنا المعمدان؟ <input type="text"></div>
-                <div class="question">6. كم رغيفاً وسمكة كانت مع التلاميذ لإطعام الخمسة آلاف؟ <input type="text"></div>
-                <div class="question">7. كيف نظم المسيح الجموع للجلوس قبل توزيع الطعام؟ <input type="text"></div>
-                <div class="question">8. بعد المعجزة، أين ذهب المسيح ليصلي منفرداً؟ <input type="text"></div>
-                <div class="question">9. في أي "هزيع" من الليل جاء المسيح للتلاميذ ماشياً على الماء؟ <input type="text"></div>
-                <div class="question">10. ماذا حدث للمرضى الذين لمسوا فقط "هدب ثوب" المسيح في أرض جنيسارت؟ <input type="text"></div>
-            </div>
-            <button class="next-btn" onclick="finish()">إنهاء الاختبار</button>
         </div>
+        
+        <div class="quiz">
+            <h3>اختبار الأصحاح السادس:</h3>
+            <p>1. ما هي المهن التي نُسبت للمسيح من قِبل أهل وطنه؟</p>
+            <label class="quiz-option"><input type="radio" name="q6_1"> النجار</label>
+            <label class="quiz-option"><input type="radio" name="q6_1"> الصياد</label>
 
-        <div id="thanks" class="final-msg">
-            <h2>تم الانتهاء بنجاح!</h2>
-            <p>شكراً لك على استخدام الموقع التعليمي للمبرمج فادي مرزق.</p>
+            <p>2. لماذا تعجب المسيح من أهل الناصرة؟</p>
+            <label class="quiz-option"><input type="radio" name="q6_2"> من عدم إيمانهم</label>
+            <label class="quiz-option"><input type="radio" name="q6_2"> من كثرة أسئلتهم</label>
+
+            <p>3. ما الذي سمح المسيح للتلاميذ بحمله فقط عند خروجهم للإرسالية؟</p>
+            <label class="quiz-option"><input type="radio" name="q6_3"> عصا فقط (لا مزود ولا خبز ولا نحاس)</label>
+            <label class="quiz-option"><input type="radio" name="q6_3"> حقيبة سفر مليئة بالثياب</label>
+
+            <p>4. ماذا طلب المسيح من التلاميذ أن يفعلوا إذا لم يقبلهم بيت أو مدينة؟</p>
+            <label class="quiz-option"><input type="radio" name="q6_4"> انفضوا الغبار الذي تحت أرجلكم شهادة عليهم</label>
+            <label class="quiz-option"><input type="radio" name="q6_4"> ابقوا هناك حتى يقبلوكم</label>
+
+            <p>5. ما هو السبب الحقيقي الذي جعل هيرودس يقطع رأس يوحنا المعمدان؟</p>
+            <label class="quiz-option"><input type="radio" name="q6_5"> بسبب قسمه أمام المتكئين من أجل ابنة هيروديا</label>
+            <label class="quiz-option"><input type="radio" name="q6_5"> لأن يوحنا حاول الهروب من السجن</label>
+
+            <p>6. كم رغيفاً وسمكة كانت مع التلاميذ لإطعام الخمسة آلاف؟</p>
+            <label class="quiz-option"><input type="radio" name="q6_6"> خمسة أرغفة وسمكتان</label>
+            <label class="quiz-option"><input type="radio" name="q6_6"> سبعة أرغفة وقليل من السمك</label>
+
+            <p>7. كيف نظم المسيح الجموع للجلوس قبل توزيع الطعام؟</p>
+            <label class="quiz-option"><input type="radio" name="q6_7"> رفاقاً رفاقاً على العشب الأخضر (مئة مئة وخمسين خمسين)</label>
+            <label class="quiz-option"><input type="radio" name="q6_7"> في صف واحد طويل جداً</label>
+
+            <p>8. بعد المعجزة، أين ذهب المسيح ليصلي منفرداً؟</p>
+            <label class="quiz-option"><input type="radio" name="q6_8"> إلى الجبل</label>
+            <label class="quiz-option"><input type="radio" name="q6_8"> إلى الهيكل</label>
+
+            <p>9. في أي "هزيع" من الليل جاء المسيح للتلاميذ ماشياً على الماء؟</p>
+            <label class="quiz-option"><input type="radio" name="q6_9"> الهزيع الرابع</label>
+            <label class="quiz-option"><input type="radio" name="q6_9"> الهزيع الأول</label>
+
+            <p>10. ماذا حدث للمرضى الذين لمسوا فقط "هدب ثوب" المسيح في أرض جنيسارت؟</p>
+            <label class="quiz-option"><input type="radio" name="q6_10"> كل من لمسه شفي</label>
+            <label class="quiz-option"><input type="radio" name="q6_10"> لم يحدث لهم شيء</label>
         </div>
-
+        <button class="btn" onclick="alert('بارك الله فيك يا ر ! انتهت المراجعة.')">إنهاء</button>
     </div>
 
-    <script>
-        function showStep(stepId) {
-            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-            document.getElementById(stepId).classList.add('active');
-            window.scrollTo(0,0);
-        }
+</div>
 
-        function finish() {
-            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-            document.getElementById('thanks').style.display = 'block';
-            window.scrollTo(0,0);
-        }
-    </script>
+<script>
+    function nextStep(id) {
+        document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        window.scrollTo(0,0);
+    }
+</script>
+
 </body>
 </html>
